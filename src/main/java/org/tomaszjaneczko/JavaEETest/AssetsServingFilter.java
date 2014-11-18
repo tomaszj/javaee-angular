@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Filter used to render main index.html in servlet set up by AssetsBundle.
+ * Filter used to render main index.html in servlet set up in /webapp folder.
  *
  * All requests that don't fetch .js, .css or images, go to the same file,
  * which is the entry point to single-page applications.
@@ -17,7 +17,7 @@ import java.util.List;
  * Assumption here is that assets servlet is set up correctly and already
  * lets through all API requests to respective Resources.
  *
- * Filter is set up in Dropwizard's Application subclass.
+ * Filter is set up with @WebFilter annotation
  */
 @WebFilter(filterName = "AssetsServingFilter", urlPatterns = "/*")
 public class AssetsServingFilter implements Filter {
