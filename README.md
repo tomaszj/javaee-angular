@@ -4,7 +4,16 @@ A sample, fairly bare-bones setup for Java EE app which serves necessary files f
 
 # Building locally
 
-run `mvn package` and then deploy the .war to your container (e.g. Glassfish server).
+run `mvn package` and then deploy the .war to your container (e.g. GlassFish server).
+
+## GlassFish
+
+If you use GlassFish from command line, go to GlassFish , use:
+
+    bin/asadmin start-domain
+    bin/asadmin deploy --contextroot "/" $PATH_TO_REPO/target/JavaEETest.war
+    
+and now you should be able to go to `http://localhost:8080`
 
 # Interesting bits
 
